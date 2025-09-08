@@ -148,8 +148,8 @@ Note: CLI‑native agents include their own internal scaffolds/orchestration. Th
 
 ### Requirements
 - API key set via `mini-extra config set` or exported in the following way:
-  - Codex: `export OPENAI_API_KEY=...` 
-  - Claude Code: `export ANTHROPIC_API_KEY=...` 
+  - Codex: `export OPENAI_API_KEY=...`
+  - Claude Code: `export ANTHROPIC_API_KEY=...`
   - Gemini CLI: `export GEMINI_API_KEY=...`
 - Optional host mounts for faster startup (already encoded in the config): host `node` and `@openai/codex` modules. If not present, the startup script installs them inside the container.
 
