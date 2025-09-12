@@ -783,6 +783,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -802,7 +806,7 @@
   
   
   <span class="md-ellipsis">
-    Advanced
+    Guides
     
   </span>
   
@@ -813,7 +817,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_5">
             <span class="md-nav__icon md-icon"></span>
-            Advanced
+            Guides
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -824,12 +828,58 @@
   
   
     <li class="md-nav__item">
-      <a href="../advanced/configuration/" class="md-nav__link">
+      <a href="../advanced/global_configuration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Configuration
+    Global configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/yaml_configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Yaml config files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Environments
     
   </span>
   
@@ -875,7 +925,7 @@
   
   
   <span class="md-ellipsis">
-    Cookbook
+    Python bindings
     
   </span>
   
@@ -1223,6 +1273,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1310,12 +1364,58 @@
   
   
     <li class="md-nav__item">
+      <a href="../reference/models/openrouter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenRouterModel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../reference/models/test_models/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     DeterministicModel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/models/extra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extra Models
     
   </span>
   
@@ -1365,6 +1465,8 @@
   
     
     
+      
+        
       
         
       
@@ -1444,6 +1546,29 @@
   
   <span class="md-ellipsis">
     DockerEnvironment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/environments/singularity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SingularityEnvironment
     
   </span>
   
@@ -1817,7 +1942,7 @@
 <h2 id="general">General</h2>
 <div class="admonition question">
 <p class="admonition-title">Does mini-SWE-agent work on my system?</p>
-<p>mini-SWE-agent should work on any system that has a bash shell or uses a container runtime to emulate one.</p>
+<p>mini-SWE-agent should work on any system that has a bash shell or uses a container runtime (e.g., docker, singularity, apptainer, etc.) to emulate one.</p>
 </div>
 <details class="question">
 <summary>Should I use mini-SWE-agent or swe-agent?</summary>
@@ -1874,6 +1999,7 @@ The location is printed when you run <code>mini --help</code>.</p>
 <div class="admonition question">
 <p class="admonition-title">What models do you support?</p>
 <p>Currently, mini-SWE-agent supports all models that are supported by <a href="https://github.com/BerriAI/litellm">litellm</a>
+or <a href="https://openrouter.ai/">OpenRouter</a>
 and we're open to extend the <code>models/</code> directory with more models should <code>litellm</code> not support them.</p>
 </div>
 <div class="admonition question">
@@ -2001,7 +2127,7 @@ But you don't need this! You can always prefix <code>cd /path/to/project</code> 
       <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
-          <a href="../advanced/cookbook/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cookbook">
+          <a href="../advanced/cookbook/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Python bindings">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -2011,7 +2137,7 @@ But you don't need this! You can always prefix <code>cd /path/to/project</code> 
                 Previous
               </span>
               <div class="md-ellipsis">
-                Cookbook
+                Python bindings
               </div>
             </div>
           </a>

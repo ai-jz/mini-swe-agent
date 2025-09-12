@@ -854,6 +854,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -873,7 +877,7 @@
   
   
   <span class="md-ellipsis">
-    Advanced
+    Guides
     
   </span>
   
@@ -884,7 +888,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_5">
             <span class="md-nav__icon md-icon"></span>
-            Advanced
+            Guides
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -895,12 +899,58 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/configuration/" class="md-nav__link">
+      <a href="../../advanced/global_configuration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Configuration
+    Global configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/yaml_configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Yaml config files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Environments
     
   </span>
   
@@ -946,7 +996,7 @@
   
   
   <span class="md-ellipsis">
-    Cookbook
+    Python bindings
     
   </span>
   
@@ -1225,6 +1275,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1312,12 +1366,58 @@
   
   
     <li class="md-nav__item">
+      <a href="../../reference/models/openrouter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenRouterModel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../reference/models/test_models/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     DeterministicModel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/models/extra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extra Models
     
   </span>
   
@@ -1367,6 +1467,8 @@
   
     
     
+      
+        
       
         
       
@@ -1446,6 +1548,29 @@
   
   <span class="md-ellipsis">
     DockerEnvironment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/environments/singularity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SingularityEnvironment
     
   </span>
   
@@ -1947,7 +2072,7 @@ for evaluation:</p>
 <p>Can I set global cost limits?</p>
 </blockquote>
 <p>Yes, you can set global cost limits with the <code>MSWEA_GLOBAL_CALL_LIMIT</code> and <code>MSWEA_GLOBAL_COST_LIMIT</code> environment variables/global config.
-See <a href="../../advanced/configuration/">configuration</a> for more details.</p>
+See <a href="../../advanced/global_configuration/">global configuration</a> for more details.</p>
 <blockquote>
 <p>What happens to uncompleted tasks when I abort with KeyboardInterrupt?</p>
 </blockquote>
@@ -1963,14 +2088,22 @@ However, you should still check for <code>KeyboardInterrupt</code> in <code>pred
 <p>As long as it follows the SWE-bench format, you can use <code>--subset /path/to/your/dataset</code> to run on a custom dataset.
 The dataset needs to be loadable as <code>datasets.load_dataset(path, split=split)</code>.</p>
 <blockquote>
-<p>Some progress runners are stuck at 'initializing task' for a very long time</p>
+<p>Some progress runners are stuck at 'initializing task' for a very long time / time out</p>
 </blockquote>
-<p>They might be pulling docker containers -- the run sshould start immediately the next time.</p>
+<p>They might be pulling docker containers -- the run should start immediately the next time.
+If you see timeouts because of <code>docker pull</code> operations, you might want to increase <code>environment.pull_timeout</code>
+from the default of <code>120</code> (seconds).</p>
 <blockquote>
 <p>I have some docker issues</p>
 </blockquote>
 <p>Try running the docker command manually to see what's going on (it should be printed out in the console).
 Confirm that it's running with <code>docker ps</code>, and that you can use <code>docker exec -it &lt;container-id&gt; ls</code> to get some output.</p>
+<blockquote>
+<p>Docker isn't available on my HPC cluster.</p>
+</blockquote>
+<p>You can use the singularity/apptainer backend by setting <code>environment.environment_class</code> to <code>singularity</code>
+in your <a href="../../advanced/yaml_configuration/">agent config file</a>
+or specify <code>--environment-class singularity</code> from the command line</p>
 <blockquote>
 <p>Can I run a startup command in the environment?</p>
 </blockquote>
@@ -1985,6 +2118,10 @@ For example, you could use</p>
 <span class="w">  </span><span class="nt">env_startup_command</span><span class="p">:</span><span class="w"> </span><span class="s">"git</span><span class="nv"> </span><span class="s">clone</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">repo_url</span><span class="nv"> </span><span class="s">}}</span><span class="nv"> </span><span class="s">.</span><span class="nv"> </span><span class="s">--force"</span>
 </code></pre></div>
 <p>which might be particularly useful when running with environments like <a href="../../reference/environments/bubblewrap/"><code>bubblewrap</code></a>.</p>
+<blockquote>
+<p>What environment can I use for SWE-bench?</p>
+</blockquote>
+<p>See <a href="../../advanced/environments/">this guide</a> for more details.</p>
 <h2 id="implementation">Implementation</h2>
 <details class="note">
 <summary>Default config</summary>
